@@ -2,7 +2,7 @@
 # ANPASSEN vor der Übergabe: repo (GitHub-Organisation) und base_url (Worker in Veronikas Cloudflare-Konto) eintragen
 backend:
   name: github
-  repo: ORGANISATION/REPO-NAME
+  repo: v-martin-web/website
   branch: main
   base_url: https://sveltia-cms-auth.VERONIKA.workers.dev
 
