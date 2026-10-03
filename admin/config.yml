@@ -1,0 +1,292 @@
+# Sveltia CMS – Veronika Martin, Sport Event Management
+# ANPASSEN vor der Übergabe: repo (GitHub-Organisation) und base_url (Worker in Veronikas Cloudflare-Konto) eintragen
+backend:
+  name: github
+  repo: ORGANISATION/REPO-NAME
+  branch: main
+  base_url: https://sveltia-cms-auth.VERONIKA.workers.dev
+
+media_folder: assets/uploads
+public_folder: assets/uploads
+
+locale: de
+
+# Hochgeladene Bilder automatisch verkleinern und als WebP speichern
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1200
+          height: 1200
+
+collections:
+  - name: seiten
+    label: Seiten
+    editor:
+      preview: false
+    files:
+
+      # ------------------------------------------------------------------
+      - name: startseite
+        label: Startseite
+        file: data/startseite.json
+        fields:
+          - label: Oberer Bereich
+            name: hero
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Motto (Hauptüberschrift), name: motto, widget: string }
+              - { label: Unterzeile, name: unterzeile, widget: string }
+              - { label: Einleitungstext, name: text, widget: text }
+              - { label: Button „Kontakt“, name: buttonKontakt, widget: string }
+              - { label: Button „Leistungen“, name: buttonLeistungen, widget: string }
+
+          - label: Kennzahlen
+            name: kennzahlen
+            widget: list
+            label_singular: Kennzahl
+            summary: "{{zahl}} {{text}}"
+            hint: Die Zahlenleiste unter dem oberen Bereich. Am besten vier Einträge.
+            fields:
+              - { label: Zahl, name: zahl, widget: string, hint: "z. B. 25+ oder 11.370" }
+              - { label: Text, name: text, widget: string }
+
+          - label: Abschnitt „Leistungen“
+            name: leistungen
+            widget: object
+            hint: Die Leistungs-Kacheln selbst werden unter „Leistungen“ gepflegt.
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Abschnitt „Über mich“
+            name: ueberMich
+            widget: object
+            fields:
+              - { label: Profilbild, name: bild, widget: image, choose_url: false, hint: "Hochformat, mindestens 800 Pixel breit. Wird automatisch verkleinert." }
+              - { label: Bildbeschreibung, name: bildAlt, widget: string, hint: "Was ist auf dem Foto zu sehen? Wichtig für Barrierefreiheit und Google." }
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - label: Absätze
+                name: absaetze
+                widget: list
+                label_singular: Absatz
+                field: { label: Absatz, name: absatz, widget: text }
+              - { label: Button, name: button, widget: string }
+
+          - label: Kontaktbereich unten
+            name: kontakt
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Google & KI-Suche
+            name: seo
+            widget: object
+            collapsed: true
+            hint: Erscheint in den Suchergebnissen, nicht auf der Seite selbst.
+            fields:
+              - { label: Seitentitel, name: titel, widget: string, maxlength: 65, hint: "Höchstens ca. 60 Zeichen, sonst wird er bei Google abgeschnitten." }
+              - { label: Beschreibung, name: beschreibung, widget: text, maxlength: 160, hint: "120–155 Zeichen, wie eine kurze Anzeige." }
+
+      # ------------------------------------------------------------------
+      - name: leistungen
+        label: Leistungen
+        file: data/leistungen.json
+        fields:
+          - label: Seitenkopf
+            name: kopf
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Leistungen
+            name: leistungen
+            widget: list
+            label_singular: Leistung
+            summary: "{{titel}}"
+            hint: Erscheinen auf der Leistungsseite sowie als Kacheln auf Startseite und Kontaktseite – in dieser Reihenfolge.
+            fields:
+              - { label: Titel, name: titel, widget: string }
+              - { label: Spezialgebiet, name: spezialgebiet, widget: boolean, default: false, hint: "Wird hervorgehoben und auf der Leistungsseite groß oben gezeigt." }
+              - { label: Beschreibung, name: beschreibung, widget: text }
+              - { label: Hervorgehobener Satz, name: hervorhebung, widget: string, required: false, hint: "Optional, erscheint fett unter der Beschreibung." }
+              - label: Umfang
+                name: umfang
+                widget: list
+                label_singular: Punkt
+                field: { label: Punkt, name: punkt, widget: string }
+              - { label: Kurztext für die Startseite, name: kurztextStartseite, widget: text }
+              - { label: Kurztext für die Kontaktseite, name: kurztextKontakt, widget: text }
+              - { label: Link-Text auf den Kacheln, name: linkText, widget: string, hint: "z. B. „Zum Ticketing“" }
+
+          - label: Kontaktbereich unten
+            name: kontakt
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Google & KI-Suche
+            name: seo
+            widget: object
+            collapsed: true
+            hint: Erscheint in den Suchergebnissen, nicht auf der Seite selbst.
+            fields:
+              - { label: Seitentitel, name: titel, widget: string, maxlength: 65, hint: "Höchstens ca. 60 Zeichen, sonst wird er bei Google abgeschnitten." }
+              - { label: Beschreibung, name: beschreibung, widget: text, maxlength: 160, hint: "120–155 Zeichen, wie eine kurze Anzeige." }
+
+      # ------------------------------------------------------------------
+      - name: referenzen
+        label: Referenzen
+        file: data/referenzen.json
+        fields:
+          - label: Seitenkopf
+            name: kopf
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Projekte & Einsätze (Zeitleiste)
+            name: einsaetze
+            widget: list
+            label_singular: Einsatz
+            add_to_top: true
+            summary: "{{zeitraum}} – {{titel}}"
+            hint: Neue Einsätze werden oben angelegt. Die Reihenfolge hier ist die Reihenfolge auf der Seite.
+            fields:
+              - { label: Zeitraum, name: zeitraum, widget: string, hint: "z. B. 4.–9. November 2025" }
+              - { label: Veranstaltung, name: titel, widget: string, hint: "z. B. Tischtennis WTT CHAMPIONS, Frankfurt" }
+
+          - label: Mitarbeit bei Veranstaltungen
+            name: veranstaltungen
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - label: Einträge
+                name: eintraege
+                widget: list
+                label_singular: Eintrag
+                summary: "{{sportart}}"
+                fields:
+                  - { label: Sportart, name: sportart, widget: string }
+                  - { label: Veranstaltungen, name: veranstaltungen, widget: text }
+
+          - label: Werdegang
+            name: werdegang
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - label: Berufliche Stationen
+                name: stationen
+                widget: list
+                label_singular: Station
+                summary: "{{zeitraum}} – {{text}}"
+                fields:
+                  - { label: Zeitraum, name: zeitraum, widget: string }
+                  - { label: Tätigkeit, name: text, widget: text }
+
+          - label: Ausbildung & Sprachen
+            name: ausbildung
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - label: Ausbildung
+                name: eintraege
+                widget: list
+                label_singular: Eintrag
+                summary: "{{zeitraum}}"
+                fields:
+                  - { label: Zeitraum, name: zeitraum, widget: string }
+                  - label: Absätze
+                    name: absaetze
+                    widget: list
+                    label_singular: Absatz
+                    field: { label: Absatz, name: absatz, widget: text }
+              - { label: Überschrift Sprachkenntnisse, name: sprachenUeberschrift, widget: string }
+              - label: Sprachen
+                name: sprachen
+                widget: list
+                label_singular: Sprache
+                summary: "{{sprache}}: {{niveau}}"
+                fields:
+                  - { label: Sprache, name: sprache, widget: string }
+                  - { label: Niveau, name: niveau, widget: string }
+
+          - label: Kontaktbereich unten
+            name: kontakt
+            widget: object
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Google & KI-Suche
+            name: seo
+            widget: object
+            collapsed: true
+            hint: Erscheint in den Suchergebnissen, nicht auf der Seite selbst.
+            fields:
+              - { label: Seitentitel, name: titel, widget: string, maxlength: 65, hint: "Höchstens ca. 60 Zeichen, sonst wird er bei Google abgeschnitten." }
+              - { label: Beschreibung, name: beschreibung, widget: text, maxlength: 160, hint: "120–155 Zeichen, wie eine kurze Anzeige." }
+
+      # ------------------------------------------------------------------
+      - name: kontakt
+        label: Kontakt
+        file: data/kontakt.json
+        fields:
+          - label: Seitenkopf
+            name: kopf
+            widget: object
+            hint: E-Mail-Adresse und Telefonnummer werden unter „Allgemein“ gepflegt.
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+              - { label: Text, name: text, widget: text }
+
+          - label: Abschnitt „Leistungen“
+            name: leistungen
+            widget: object
+            hint: Die Kacheln selbst werden unter „Leistungen“ gepflegt.
+            fields:
+              - { label: Kleine Überschrift, name: label, widget: string }
+              - { label: Überschrift, name: ueberschrift, widget: string }
+
+          - label: Google & KI-Suche
+            name: seo
+            widget: object
+            collapsed: true
+            hint: Erscheint in den Suchergebnissen, nicht auf der Seite selbst. Bei geänderter Telefonnummer auch hier anpassen.
+            fields:
+              - { label: Seitentitel, name: titel, widget: string, maxlength: 65, hint: "Höchstens ca. 60 Zeichen, sonst wird er bei Google abgeschnitten." }
+              - { label: Beschreibung, name: beschreibung, widget: text, maxlength: 160, hint: "120–155 Zeichen, wie eine kurze Anzeige." }
+
+      # ------------------------------------------------------------------
+      - name: allgemein
+        label: Allgemein (alle Seiten)
+        file: data/allgemein.json
+        fields:
+          - { label: E-Mail-Adresse, name: email, widget: string, hint: "Gilt für alle Seiten, Impressum und Datenschutz." }
+          - { label: Telefonnummer, name: telefon, widget: string, hint: "Schreibweise wie angezeigt, z. B. +49 (0) 177 144 46 28" }
+          - { label: Straße und Hausnummer, name: strasse, widget: string }
+          - { label: PLZ, name: plz, widget: string }
+          - { label: Ort, name: ort, widget: string }
+          - { label: Beschriftung E-Mail-Feld, name: kontaktwegEmail, widget: string }
+          - { label: Beschriftung Telefon-Feld, name: kontaktwegTelefon, widget: string }
+          - { label: Text in der Fußzeile, name: fusszeileText, widget: text }
+          - { label: Kurzbeschreibung für Google & KI-Suche, name: kurzbeschreibung, widget: text, hint: "Nicht auf der Seite sichtbar. Beschreibt in zwei Sätzen, was Veronika anbietet." }

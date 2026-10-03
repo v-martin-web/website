@@ -1,0 +1,58 @@
+{
+  "seo": {
+    "titel": "Akkreditierung, Hotels & Ticketing | Veronika Martin",
+    "beschreibung": "Akkreditierung als Spezialgebiet, dazu Hotels, Ticketing und Event Service für Sportveranstaltungen – einzeln buchbar oder mit Projektleitung."
+  },
+  "kopf": {
+    "label": "Leistungen",
+    "ueberschrift": "Tätigkeitsschwerpunkte",
+    "text": "Gerne unterstütze ich Sie in einzelnen Bereichen, übernehme auch die Projektleitung oder berate Sie in der Umsetzung Ihrer Projekte."
+  },
+  "leistungen": [
+    {
+      "titel": "Akkreditierung",
+      "spezialgebiet": true,
+      "beschreibung": "Hinter den Kulissen eines jeden Sportevents gibt es zahlreiche Mitwirkende. Für sie alle müssen die Laufwege und Zugänge geregelt sein. Dafür erhält jeder Teilnehmer einen Akkreditierungsausweis.",
+      "hervorhebung": "Die Akkreditierung ist mein Spezialgebiet.",
+      "umfang": ["Erstellung von Konzepten", "Software", "Datenerfassung und -pflege", "Ausweisdruck"],
+      "kurztextStartseite": "Hinter den Kulissen eines jeden Sportevents gibt es zahlreiche Mitwirkende. Für sie alle müssen die Laufwege und Zugänge geregelt sein.",
+      "kurztextKontakt": "Konzepte, Software, Datenerfassung und -pflege, Ausweisdruck.",
+      "linkText": "Zur Akkreditierung"
+    },
+    {
+      "titel": "Hotels",
+      "spezialgebiet": false,
+      "beschreibung": "Bei überregionalen oder internationalen Events reisen die Teilnehmer, Mitarbeiter, Funktionäre, Journalisten und andere Gruppen oft von weither an. Sie alle benötigen eine Unterkunft möglichst nah am Veranstaltungsort.",
+      "hervorhebung": "",
+      "umfang": ["Auswahl der Hotels", "Reservierung von Zimmerkontingenten", "finale Buchungen"],
+      "kurztextStartseite": "Bei überregionalen oder internationalen Events reisen die Teilnehmer, Mitarbeiter, Funktionäre, Journalisten und andere Gruppen oft von weither an.",
+      "kurztextKontakt": "Auswahl der Hotels, Reservierung von Zimmerkontingenten, finale Buchungen.",
+      "linkText": "Zu den Hotels"
+    },
+    {
+      "titel": "Ticketing",
+      "spezialgebiet": false,
+      "beschreibung": "Zuschauer sorgen für eine besondere Atmosphäre bei sportlichen Wettkämpfen. Den Fans soll ein besonderes Erlebnis geboten werden. Zudem nehmen die Einnahmen aus dem Ticketverkauf einen wesentlichen Posten im Budget ein.",
+      "hervorhebung": "",
+      "umfang": ["Erstellung von Ticketkonzepten", "Einrichtung von Vorverkaufsstellen", "Abwicklung des Ticketverkaufs", "Abrechnung"],
+      "kurztextStartseite": "Zuschauer sorgen für eine besondere Atmosphäre bei sportlichen Wettkämpfen. Den Fans soll ein besonderes Erlebnis geboten werden.",
+      "kurztextKontakt": "Ticketkonzepte, Vorverkaufsstellen, Abwicklung des Ticketverkaufs, Abrechnung.",
+      "linkText": "Zum Ticketing"
+    },
+    {
+      "titel": "Event Service",
+      "spezialgebiet": false,
+      "beschreibung": "Neben meinen Spezialbereichen stehe ich auch gerne für allgemeine Veranstaltungsthemen zur Verfügung.",
+      "hervorhebung": "",
+      "umfang": ["Projektplanung", "Erstellung einer Checkliste", "Erstellung eines Zeitplans", "Aufstellung des Budgets"],
+      "kurztextStartseite": "Neben meinen Spezialbereichen stehe ich auch gerne für allgemeine Veranstaltungsthemen zur Verfügung.",
+      "kurztextKontakt": "Projektplanung, Checkliste, Zeitplan, Aufstellung des Budgets.",
+      "linkText": "Zum Event Service"
+    }
+  ],
+  "kontakt": {
+    "label": "Kontakt",
+    "ueberschrift": "Welcher Bereich passt zu Ihrem Event?",
+    "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen zurück."
+  }
+}

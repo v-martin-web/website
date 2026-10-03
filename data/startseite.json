@@ -1,0 +1,41 @@
+{
+  "seo": {
+    "titel": "Sport Event Management & Akkreditierung | Veronika Martin",
+    "beschreibung": "Akkreditierung, Hotels, Ticketing und Event Service für Sportveranstaltungen – seit über 25 Jahren, von der Dorfmeisterschaft bis zur Weltmeisterschaft."
+  },
+  "hero": {
+    "label": "Sport Event Management",
+    "motto": "Mittendrin statt nur dabei",
+    "unterzeile": "Das ist mein Motto, unter dem ich mich gerne im Sport engagiere!",
+    "text": "Sie organisieren eine Veranstaltung – egal ob Dorfmeisterschaften, nationale oder internationale Profimeisterschaften – und benötigen noch Unterstützung bei der Vorbereitung und Durchführung? Oder Ihre Profimannschaft benötigt organisatorische Hilfe? Gerne unterstütze ich Sie in einzelnen Bereichen, übernehme auch die Projektleitung oder berate Sie in der Umsetzung Ihrer Projekte.",
+    "buttonKontakt": "Kontakt aufnehmen",
+    "buttonLeistungen": "Leistungen ansehen"
+  },
+  "kennzahlen": [
+    { "zahl": "25+", "text": "Jahre Organisation von Sportveranstaltungen" },
+    { "zahl": "55", "text": "internationale Veranstaltungen" },
+    { "zahl": "173", "text": "Nationen akkreditiert bei der Tischtennis-WM 2017" },
+    { "zahl": "11.370", "text": "Hotelübernachtungen verwaltet bei einer einzigen Weltmeisterschaft" }
+  ],
+  "leistungen": {
+    "label": "Leistungen",
+    "ueberschrift": "Wobei ich Sie unterstütze",
+    "text": "Vier Bereiche, in denen ich Veranstalter entlaste – einzeln buchbar oder als Gesamtpaket inklusive Projektleitung."
+  },
+  "ueberMich": {
+    "bild": "assets/img/portraet-veronika-martin-800.jpg",
+    "bildAlt": "Veronika Martin mit Tennisschläger und Tischtennisschläger",
+    "label": "Das bin ich!",
+    "ueberschrift": "Seit über 25 Jahren im Sport zu Hause",
+    "absaetze": [
+      "Tischtennis, Tennis, Fußball, Golf, Schach – das ist eine Auswahl der Sportarten, in denen ich schon beruflich tätig war. Und ich freue mich immer wieder darüber Insider-Kenntnisse in weiteren Sportarten zu erlangen.",
+      "Die Organisation von nationalen Wettbewerben über internationale Turnierserien bis hin zu Europa- und Weltmeisterschaften ist seit mehr als 25 Jahren meine Arbeitswelt. Hier erfahren Sie mehr über mich und meine bisherigen Erfahrungen."
+    ],
+    "button": "Mehr erfahren"
+  },
+  "kontakt": {
+    "label": "Kontakt",
+    "ueberschrift": "Sie planen eine Veranstaltung?",
+    "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen zurück."
+  }
+}

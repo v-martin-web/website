@@ -1,0 +1,55 @@
+# Veronika Martin – Sport Event Management
+
+> Veronika Martin aus Ingolstadt unterstützt Veranstalter und Profimannschaften bei der Vorbereitung und Durchführung von Sportveranstaltungen – von Dorfmeisterschaften bis zu Welt- und Europameisterschaften. Spezialgebiet ist die Akkreditierung; dazu kommen Hotelmanagement, Ticketing, allgemeiner Event Service und auf Wunsch die Projektleitung. Seit über 25 Jahren im Sport tätig, selbständig seit 2011.
+
+Einsatzgebiet: ganz Deutschland. Motto: „Mittendrin statt nur dabei“. Leistungen sind einzeln buchbar oder als Gesamtpaket inklusive Projektleitung; außerdem Beratung bei der Umsetzung eigener Projekte.
+
+## Aktuelle Inhalte
+
+Die Texte dieser Website werden über ein CMS gepflegt. Die folgenden Dateien enthalten immer den aktuellen Stand aller Seiteninhalte (JSON). Weicht die Zusammenfassung unten davon ab, gilt der Stand dieser Dateien:
+
+- [Startseite](https://veronika-martin.de/data/startseite.json): Motto, Kennzahlen, Über mich
+- [Leistungen](https://veronika-martin.de/data/leistungen.json): alle Leistungen mit Beschreibung und Umfang
+- [Referenzen](https://veronika-martin.de/data/referenzen.json): Einsätze (neueste zuerst), Veranstaltungen, Werdegang, Ausbildung, Sprachen
+- [Kontaktdaten](https://veronika-martin.de/data/allgemein.json): E-Mail, Telefon, Adresse
+
+## Kennzahlen
+
+- 25+ Jahre Organisation von Sportveranstaltungen
+- 55 internationale Veranstaltungen
+- 173 akkreditierte Nationen bei der Tischtennis-WM 2017
+- 11.370 verwaltete Hotelübernachtungen bei einer einzigen Weltmeisterschaft
+
+## Leistungen
+
+- [Akkreditierung](https://veronika-martin.de/leistungen.html#akkreditierung): Spezialgebiet. Regelung von Laufwegen und Zugängen aller Mitwirkenden – Konzepte, Software, Datenerfassung und -pflege, Ausweisdruck.
+- [Hotels](https://veronika-martin.de/leistungen.html#hotels): Unterkünfte nah am Veranstaltungsort für Teilnehmer, Mitarbeiter, Funktionäre und Journalisten – Hotelauswahl, Reservierung von Zimmerkontingenten, finale Buchungen.
+- [Ticketing](https://veronika-martin.de/leistungen.html#ticketing): Ticketkonzepte, Einrichtung von Vorverkaufsstellen, Abwicklung des Ticketverkaufs, Abrechnung.
+- [Event Service](https://veronika-martin.de/leistungen.html#event-service): Projektplanung, Checklisten, Zeitpläne, Budgetaufstellung.
+
+## Referenzen (Auswahl, Stand Oktober 2026)
+
+- Tischtennis: WTT CHAMPIONS Frankfurt 2023, 2024, 2025; Deutsche Tischtennis-Finals 2024, 2025; Weltmeisterschaften 2006, 2012, 2017; Europameisterschaften 2006; German Open; Europe Top 12
+- Multisport: European Championships Munich 2022 (Teamassistentin des LOC)
+- Tennis: Tennis Masters, Davis Cup, Gerry Weber Open, MercedesCup
+- Golf: Austrian GolfOpen (PGA European Tour)
+- Fußball: UEFA EURO 2008, FIFA WM 2006
+- Diverse: Schach-EM 2007, Firmen-Events, Konzerte, Modenschau
+
+Vollständige Liste und Werdegang: [Referenzen](https://veronika-martin.de/referenzen.html)
+
+## Qualifikation
+
+- Magistra Artium in Sportwissenschaft, Zivilrecht und Soziologie, Westfälische Wilhelms-Universität Münster (2002), Magisterarbeit zum Sponsoring von Sportveranstaltungen
+- Sprachen: Deutsch, Englisch (fließend), Französisch und Spanisch (Grundkenntnisse)
+
+## Kontakt
+
+- E-Mail: events@veronika-martin.de
+- Telefon: +49 177 1444628
+- Adresse: Blausternstraße 11a, 85049 Ingolstadt, Deutschland
+- [Kontaktseite](https://veronika-martin.de/kontakt.html)
+
+## Optional
+
+- [Impressum](https://veronika-martin.de/impressum.html)

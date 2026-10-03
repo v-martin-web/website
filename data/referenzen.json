@@ -1,0 +1,64 @@
+{
+  "seo": {
+    "titel": "Referenzen: WM, EM & WTT-Turniere | Veronika Martin",
+    "beschreibung": "Mitarbeit bei WTT CHAMPIONS Frankfurt, European Championships Munich 2022, Tischtennis-WM, Davis Cup, UEFA EURO 2008 und FIFA WM 2006 – plus Werdegang."
+  },
+  "kopf": {
+    "label": "Referenzen",
+    "ueberschrift": "Projekte & Einsätze",
+    "text": "Die Organisation von nationalen Wettbewerben über internationale Turnierserien bis hin zu Europa- und Weltmeisterschaften ist seit mehr als 25 Jahren meine Arbeitswelt."
+  },
+  "einsaetze": [
+    { "zeitraum": "4.–9. November 2025", "titel": "Tischtennis WTT CHAMPIONS, Frankfurt" },
+    { "zeitraum": "6.–9. Juni 2025", "titel": "Deutsche Tischtennis-Finals, Erfurt" },
+    { "zeitraum": "3.–10. November 2024", "titel": "Tischtennis WTT CHAMPIONS, Frankfurt" },
+    { "zeitraum": "13.–16. Juni 2024", "titel": "Deutsche Tischtennis-Finals, Erfurt" },
+    { "zeitraum": "29. Oktober – 5. November 2023", "titel": "Tischtennis WTT CHAMPIONS, Frankfurt" },
+    { "zeitraum": "seit Februar 2023", "titel": "Mitarbeiterin für Hotels & Akkreditierung bei der Tischtennis Marketing GmbH" },
+    { "zeitraum": "11.–21. August 2022", "titel": "European Championships Munich 2022 (Teamassistentin des LOC / März – September 2022)" }
+  ],
+  "veranstaltungen": {
+    "label": "Erfahrung",
+    "ueberschrift": "Mitarbeit bei folgenden Veranstaltungen",
+    "eintraege": [
+      { "sportart": "Tischtennis", "veranstaltungen": "WTT CHAMPIONS Frankfurt 2023 + 2024 + 2025, Deutsche Tischtennis-Finals 2024 + 2025" },
+      { "sportart": "9 Sportarten", "veranstaltungen": "European Championships Munich 2022" },
+      { "sportart": "Tischtennis", "veranstaltungen": "Weltmeisterschaften 2006, 2012, 2017, Europameisterschaften 2006, Europäische Olympia-Qualifikation 2004, German Open, Europe Top 12, Länderspiele in Deutschland, Senioren WM 2006 und EM 2013" },
+      { "sportart": "Tennis", "veranstaltungen": "Tennis Masters, Davis Cup, Gerry Weber Open, MercedesCup" },
+      { "sportart": "Golf", "veranstaltungen": "Austrian GolfOpen (PGA European Tour)" },
+      { "sportart": "Fußball", "veranstaltungen": "UEFA EURO 2008, FIFA WM 2006" },
+      { "sportart": "Diverse", "veranstaltungen": "Firmen-Events, Konzerte, Modenschau, Schach-EM 2007" }
+    ]
+  },
+  "werdegang": {
+    "label": "Werdegang",
+    "ueberschrift": "Berufliche Stationen",
+    "stationen": [
+      { "zeitraum": "seit 2011", "text": "selbständig mit einem Kleingewerbe in der Sport-Event-Branche" },
+      { "zeitraum": "2023–2025", "text": "Mitarbeiterin für Hotels & Akkreditierung bei der Tischtennis Marketing GmbH" },
+      { "zeitraum": "2022", "text": "Teamassistentin beim LOC für die European Championships Munich 2022 (angestellt bei der S&K Marketing GmbH)" },
+      { "zeitraum": "2007–2010", "text": "Project Manager bei e|motion management gmbh, Graz, Österreich" },
+      { "zeitraum": "2002–2006", "text": "Organisationsleiterin bei der Tischtennis Marketing GmbH, Karben" }
+    ]
+  },
+  "ausbildung": {
+    "label": "Qualifikation",
+    "ueberschrift": "Ausbildung",
+    "eintraege": [
+      { "zeitraum": "2002", "absaetze": ["Abschluss Studium Magistra Artium in den Fächern Sportwissenschaft, Zivilrecht und Soziologie an der Westfälischen Wilhelms-Universität", "Thema der Magister-Arbeit: Sponsoring von Sportveranstaltungen"] },
+      { "zeitraum": "1996", "absaetze": ["Abitur am Beisenkamp Gymnasium in Hamm", "Au Pair-Aufenthalt auf Korsika, Frankreich"] },
+      { "zeitraum": "1993/1994", "absaetze": ["Austauschschülerin an der Stephen Decatur High School in Decatur, Illinois, USA"] }
+    ],
+    "sprachenUeberschrift": "Sprachkenntnisse",
+    "sprachen": [
+      { "sprache": "Englisch", "niveau": "fließend in Wort und Schrift" },
+      { "sprache": "Französisch", "niveau": "Grundkenntnisse" },
+      { "sprache": "Spanisch", "niveau": "Grundkenntnisse" }
+    ]
+  },
+  "kontakt": {
+    "label": "Kontakt",
+    "ueberschrift": "Passt diese Erfahrung zu Ihrem Projekt?",
+    "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen zurück."
+  }
+}

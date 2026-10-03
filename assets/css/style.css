@@ -1,0 +1,1576 @@
+/* ==========================================================================
+   Veronika Martin – Sport Event Management
+   Plain CSS, keine Frameworks.
+
+   Gestaltungsidee: die Seite ist selbst ein Akkreditierungssystem.
+   Nummerierte Bereiche, Zonenbalken und technische Codes in Monospace
+   spiegeln das Handwerk der Auftraggeberin – Zugänge, Zonen, Ablaufpläne.
+
+   Farben aus dem Logo: Grün #65B32E (Signal), Magenta #E50051 (nur CTAs)
+   ========================================================================== */
+
+/* --- Schriften (selbst gehostet, kein externes CDN) ----------------------
+   Fließtext: Alegreya Sans 400/700 (entspricht der ursprünglichen Website).
+   Headline: Archivo, Bold (700). Labels und Kennzahlen: IBM Plex Mono 600.
+   Bewusst nur vier Schnitte, damit die Seite schlank lädt.
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/alegreya-sans-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/alegreya-sans-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/alegreya-sans-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/alegreya-sans-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('../fonts/archivo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('../fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-mono-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-mono-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* --- Design-Token ------------------------------------------------------- */
+
+:root {
+  /* Grün als Familie, ausgehend vom Logo – reduziert auf zwei Stufen:
+     kräftiges Akzentgrün und ein dunkles Grün für Text/Kontrast */
+  --gruen: #65b32e;
+  --gruen-dunkel: #24521a;
+  --gruen-sanft: #e8f1de;
+  /* Überschriften auf hellem Grund: Akzentgrün abgedunkelt, damit große
+     Schrift den Mindestkontrast 3:1 erreicht (#65b32e schafft nur 2,4:1) */
+  --gruen-titel: #4a8f22;
+
+  /* Signalfarbe – ausschließlich für Handlungsaufforderungen.
+     Hover-Zustand als eigene, dunklere Stufe: filter: brightness() würde
+     auch die weiße Schrift abdunkeln und den Kontrast unter 4,5:1 drücken. */
+  --magenta: #e50051;
+  --magenta-dunkel: #c30045;
+  /* Nur für Schrift direkt auf dem Hero-Bild: eine Stufe tiefer, damit der
+     Kontrast auch über dunklen Bildstellen trägt */
+  --magenta-tief: #a3013c;
+
+  /* Neutrale mit Grünstich */
+  --tinte: #14180f;
+  --text: #2e3329;
+  --text-leise: #5c6356;
+  --weiss: #ffffff;
+  --papier: #f2f5ee;
+  --linie: #d7ded0;
+
+  /* Auf dunklem Grund (Schrift selbst: --weiss) */
+  --auf-dunkel-leise: rgba(255, 255, 255, 0.72);
+  --auf-dunkel-linie: rgba(255, 255, 255, 0.4);
+
+  /* Typografie */
+  --headline: 'Archivo', sans-serif;
+  --sans: 'Alegreya Sans', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+
+  /* Maße */
+  --breite: 1180px;
+  --rand: clamp(1.25rem, 4vw, 2.5rem);
+  --schmal: 760px;
+  /* Rundungen: ein Ausweis ist laminiert und hat weiche Ecken –
+     dieselbe Sprache trägt jetzt die ganze Seite. */
+  --r-klein: 10px;
+  --r: 16px;
+  --r-gross: 24px;
+  --r-voll: 999px;
+  --balken: 3px; /* Breite des Zonenbalkens */
+  --kopf-hoehe: 88px;
+  --sektion: clamp(4rem, 8vw, 7rem);
+
+  /* Der Stern aus dem Logo – bleibt als Aufzählungszeichen erhalten */
+  --stern-magenta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e50051' d='M12 1.5l3.1 7.1 7.7.7-5.8 5.1 1.7 7.6L12 18l-6.7 4 1.7-7.6-5.8-5.1 7.7-.7z'/%3E%3C/svg%3E");
+  --stern-gruen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2365b32e' d='M12 1.5l3.1 7.1 7.7.7-5.8 5.1 1.7 7.6L12 18l-6.7 4 1.7-7.6-5.8-5.1 7.7-.7z'/%3E%3C/svg%3E");
+}
+
+/* --- Grundlagen --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--kopf-hoehe) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--weiss);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gruen-dunkel);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--headline);
+  font-weight: 700;
+  color: var(--gruen-titel);
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+  /* Lange deutsche Komposita sollen sauber getrennt statt hart
+     umgebrochen werden. */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 1.2rem + 3.2vw, 3.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.15rem + 1.8vw, 2.15rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1rem + 0.55vw, 1.3rem);
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--tinte);
+}
+
+:focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 3px;
+  border-radius: var(--r-klein);
+}
+
+/* --- Hilfsklassen ------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--breite);
+  margin-inline: auto;
+  padding-inline: var(--rand);
+}
+
+.container--schmal {
+  max-width: var(--schmal);
+}
+
+.sektion {
+  padding-block: var(--sektion);
+}
+
+.sektion--sand {
+  background: var(--papier);
+  border-block: 1px solid var(--linie);
+}
+
+.sprunglink {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 200;
+  background: var(--magenta);
+  color: var(--weiss);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--r-voll);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.sprunglink:focus,
+.sprunglink:hover {
+  top: 1rem;
+  color: var(--weiss);
+}
+
+.abstand-oben {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* --- Sektionsmarke: Zonenbalken -------------------------------- */
+/* Das Signatur-Element: jede Sektion trägt eine Marke wie der Farbstreifen
+   auf einem Akkreditierungsausweis. */
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gruen-dunkel);
+  margin: 0 0 1.1rem;
+}
+
+.label::before {
+  content: '';
+  width: var(--balken);
+  height: 1.35em;
+  flex: none;
+  border-radius: var(--r-voll);
+  background: var(--magenta);
+}
+
+.label--mitte {
+  justify-content: center;
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--r-voll);
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--cta {
+  background: var(--magenta);
+  border-color: var(--magenta);
+  color: var(--weiss);
+}
+
+.btn--cta:hover {
+  background: var(--magenta-dunkel);
+  border-color: var(--magenta-dunkel);
+  /* explizit, sonst gewinnt die allgemeine a:hover-Farbe */
+  color: var(--weiss);
+}
+
+.btn--linie {
+  background: transparent;
+  border-color: var(--gruen-dunkel);
+  color: var(--gruen-dunkel);
+}
+
+.btn--linie:hover {
+  background: var(--gruen-sanft);
+  color: var(--gruen-dunkel);
+}
+
+.btn--klein {
+  padding: 0.62rem 1.3rem;
+  font-size: 0.95rem;
+}
+
+.pfeil-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gruen-dunkel);
+  text-decoration: none;
+}
+
+.pfeil-link::after {
+  content: '→';
+  transition: transform 0.15s ease;
+}
+
+.pfeil-link:hover {
+  color: var(--magenta);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.pfeil-link:hover::after {
+  transform: translateX(3px);
+}
+
+/* --- Kopfbereich -------------------------------------------------------- */
+
+.kopf {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(1.4) blur(6px);
+  border-bottom: 1px solid var(--linie);
+  transition: box-shadow 0.2s ease;
+}
+
+.kopf.ist-gescrollt {
+  box-shadow: 0 4px 20px rgba(20, 24, 15, 0.08);
+}
+
+.kopf__innen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  min-height: var(--kopf-hoehe);
+}
+
+/* Das Logo sitzt auf einem eigenen Schild, das unten über die Leiste
+   hinausragt – wie ein Ausweis, der an der Kante eingehängt ist. So wirkt
+   der Schriftzug "service in sports" nicht abgeschnitten und bleibt lesbar. */
+.kopf__logo {
+  position: absolute;
+  top: 0.5rem;
+  left: var(--rand);
+  /* über dem aufgeklappten Menü (.nav, z-index 4), sonst verdeckt dessen
+     weiße Fläche den Schatten des Schilds */
+  z-index: 5;
+  background: var(--weiss);
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-gross);
+  box-shadow: 0 18px 34px -22px rgba(20, 24, 15, 0.5);
+}
+
+.kopf__logo img {
+  width: clamp(148px, 17vw, 190px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2.1rem);
+}
+
+.nav__liste {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2.1rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  position: relative;
+  font-size: 0.98rem;
+  color: var(--text);
+  text-decoration: none;
+  padding-block: 0.4rem;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--balken);
+  border-radius: var(--r-voll);
+  background: var(--magenta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+
+.nav__link:hover {
+  color: var(--tinte);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+.nav__link[aria-current='page'] {
+  color: var(--tinte);
+}
+
+.nav-schalter {
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-voll);
+  padding: 0.6rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinte);
+  cursor: pointer;
+}
+
+.nav-schalter__balken {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tinte);
+}
+
+.nav-schalter__balken::before,
+.nav-schalter__balken::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--tinte);
+}
+
+.nav-schalter__balken::before {
+  top: -6px;
+}
+
+.nav-schalter__balken::after {
+  top: 6px;
+}
+
+/* --- Hero --------------------------------------------------------------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: clamp(460px, 58vh, 660px);
+  padding-block: clamp(4.5rem, 9vw, 7rem) clamp(3rem, 6vw, 5rem);
+  border-bottom: var(--balken) solid var(--magenta);
+
+  /* Die Ausweissammlung liegt als Hintergrund unter dem gesamten Hero. Der
+     Schleier ist links dicht (dort steht der Text) und gibt das Bild nach
+     rechts hin frei, wo keine Schrift mehr darüberliegt. */
+  background-color: var(--papier);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      100deg,
+      rgba(242, 245, 238, 0.96) 0%,
+      rgba(242, 245, 238, 0.95) 50%,
+      rgba(242, 245, 238, 0.92) 60%,
+      rgba(242, 245, 238, 0.45) 70%,
+      rgba(242, 245, 238, 0.1) 88%
+    ),
+    url('../img/akkreditierungsausweise-1600.jpg');
+  background-image: linear-gradient(
+      100deg,
+      rgba(242, 245, 238, 0.96) 0%,
+      rgba(242, 245, 238, 0.95) 50%,
+      rgba(242, 245, 238, 0.92) 60%,
+      rgba(242, 245, 238, 0.45) 70%,
+      rgba(242, 245, 238, 0.1) 88%
+    ),
+    image-set(
+      url('../img/akkreditierungsausweise-1600.webp') type('image/webp'),
+      url('../img/akkreditierungsausweise-1600.jpg') type('image/jpeg')
+    );
+}
+
+.hero > .container {
+  width: 100%;
+}
+
+.hero__kopf {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.hero__motto {
+  margin-bottom: 0.3em;
+}
+
+.hero__unterzeile {
+  font-family: var(--sans);
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+  color: var(--magenta-tief);
+  margin-bottom: 1.5rem;
+}
+
+.hero__text {
+  font-size: 1.07rem;
+  max-width: 52ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero__aktionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+/* Bildrahmen mit Ausweis-Anmutung: Zonenbalken oben, feine Kante */
+.ueber__bild {
+  position: relative;
+}
+
+.ueber__bild img {
+  width: 100%;
+  border: 1px solid var(--gruen);
+  border-radius: var(--r-gross);
+  box-shadow: 0 18px 40px -22px rgba(20, 24, 15, 0.5);
+}
+
+/* --- Vertrauensleiste --------------------------------------------------- */
+
+.fakten {
+  background: var(--weiss);
+  border-bottom: 1px solid var(--linie);
+}
+
+.fakten__liste {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fakten__eintrag {
+  padding: clamp(1.6rem, 3vw, 2.4rem) clamp(1.25rem, 2.5vw, 2rem);
+  border-left: 1px solid var(--linie);
+}
+
+.fakten__eintrag:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.fakten__zahl {
+  display: block;
+  font-family: var(--mono);
+  font-size: clamp(1.4rem, 1.1rem + 1.1vw, 1.9rem);
+  font-weight: 600;
+  color: var(--gruen-dunkel);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.fakten__text {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-leise);
+  margin-top: 0.4rem;
+}
+
+/* --- Sektionskopf ------------------------------------------------------- */
+
+.sektionskopf {
+  max-width: 62ch;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.sektionskopf--mitte {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.sektionskopf p {
+  color: var(--text-leise);
+  font-size: 1.05rem;
+}
+
+/* --- Leistungs-Karten (Start- und Kontaktseite) ------------------------- */
+
+.karten {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.karte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 0;
+}
+
+/* Statt eines Kastens trägt jede Leistung nur ihren Zonenbalken. */
+.karte::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--balken);
+  border-radius: var(--r-voll);
+  background: var(--gruen);
+  transition: background-color 0.18s ease;
+}
+
+.karte:hover::before {
+  background: var(--magenta);
+}
+
+/* Zonennummer wie eine Bereichskennung auf dem Ausweis */
+.karte__nr {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--magenta);
+  margin-bottom: 0.75rem;
+}
+
+.karte h3 {
+  margin-bottom: 0.5rem;
+}
+
+.karte p {
+  font-size: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.karte .pfeil-link {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.karte--hervor::before {
+  background: var(--magenta);
+  height: 5px;
+}
+
+.abzeichen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  /* Bewusst ohne Fläche und Pillenform: ein gefülltes Magenta-Pill sähe aus
+     wie ein CTA-Button, ist aber nicht klickbar. */
+  color: var(--magenta-dunkel);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.abzeichen::before {
+  content: '';
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--stern-magenta) center / contain no-repeat;
+}
+
+/* --- Leistungsseite: Detailblöcke --------------------------------------- */
+
+.sprungnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  padding: 0;
+}
+
+.sprungnav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--r-voll);
+  background: var(--weiss);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.sprungnav a:hover {
+  border-color: var(--gruen);
+  background: var(--gruen-sanft);
+  color: var(--gruen-dunkel);
+}
+
+.leistung {
+  scroll-margin-top: calc(var(--kopf-hoehe) + 1.5rem);
+}
+
+.leistung + .leistung {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.leistung__block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  align-items: start;
+  padding: 1.75rem 0 0;
+}
+
+.leistung__block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--balken);
+  border-radius: var(--r-voll);
+  background: var(--gruen);
+}
+
+.leistung__nr {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--magenta);
+  margin-bottom: 0.75rem;
+}
+
+.leistung--spezial .leistung__block::before {
+  background: var(--magenta);
+  height: 5px;
+}
+
+.leistung--spezial h2 {
+  font-size: clamp(1.9rem, 1.35rem + 2.3vw, 2.85rem);
+}
+
+.leistungen__raster {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.leistungen__raster .leistung + .leistung {
+  margin-top: 0;
+}
+
+.leistungen__raster .leistung__block {
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+
+/* Stern-Liste: das Logo-Zeichen als Aufzählungspunkt */
+.stern-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stern-liste li {
+  position: relative;
+  padding-left: 1.65rem;
+  margin-bottom: 0.65rem;
+  color: var(--tinte);
+}
+
+.stern-liste li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--stern-magenta) center / contain no-repeat;
+}
+
+.stern-liste li:last-child {
+  margin-bottom: 0;
+}
+
+.leistung__umfang {
+  border-top: 1px solid var(--gruen-sanft);
+  padding-top: 1.25rem;
+}
+
+.leistung__umfang h3 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gruen-dunkel);
+  margin-bottom: 1rem;
+}
+
+/* --- Über mich ---------------------------------------------------------- */
+
+.ueber {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+/* --- Ablaufplan (Projekte & Einsätze) ----------------------------------- */
+
+.zeitleiste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.zeitleiste::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0.65rem;
+  bottom: 0.65rem;
+  width: 2px;
+  background: var(--gruen-sanft);
+}
+
+.zeitleiste__eintrag {
+  position: relative;
+  padding-left: 2.4rem;
+  padding-bottom: 1.6rem;
+}
+
+.zeitleiste__eintrag:last-child {
+  padding-bottom: 0;
+}
+
+.zeitleiste__eintrag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--stern-gruen) center / contain no-repeat;
+}
+
+.zeitleiste__zeit {
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--gruen-dunkel);
+}
+
+.zeitleiste__titel {
+  display: block;
+  font-family: var(--headline);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--tinte);
+  line-height: 1.35;
+}
+
+/* --- Datenlisten (Referenzen, Werdegang, Sprachen) ---------------------- */
+
+.daten {
+  display: grid;
+  grid-template-columns: minmax(9rem, 15rem) 1fr;
+  gap: 0 clamp(1.25rem, 3vw, 2.5rem);
+  margin: 0;
+  border-top: 1px solid var(--linie);
+}
+
+.daten dt {
+  grid-column: 1;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gruen-dunkel);
+  padding: 1.15rem 0 0.3rem;
+  border-top: 1px solid var(--linie);
+}
+
+.daten dt:first-of-type,
+.daten dd:first-of-type {
+  border-top: 0;
+}
+
+.daten dd {
+  grid-column: 2;
+  margin: 0;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--linie);
+}
+
+.daten dd p {
+  margin-bottom: 0.35rem;
+}
+
+.daten dd p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Kontaktband: dunkelgrüne Vollfläche auf jeder Seite ---------------- */
+
+.kontaktband {
+  background: var(--gruen-dunkel);
+  color: var(--weiss);
+  padding-block: clamp(3.25rem, 6vw, 5rem);
+}
+
+.kontaktband__innen {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.kontaktband .label {
+  color: var(--gruen);
+}
+
+.kontaktband h2 {
+  color: var(--weiss);
+  font-size: clamp(1.7rem, 1.25rem + 2vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.kontaktband p {
+  color: var(--auf-dunkel-leise);
+  max-width: 46ch;
+}
+
+.kontaktband__wege {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Großes Klickziel für Telefon und E-Mail */
+.kontaktweg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--auf-dunkel-linie);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--weiss);
+  transition: border-color 0.15s ease, background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.kontaktweg:hover {
+  border-color: var(--gruen);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+  color: var(--weiss);
+}
+
+.kontaktweg__symbol {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--auf-dunkel-linie);
+  border-radius: 50%;
+  color: var(--gruen);
+}
+
+.kontaktweg__symbol svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.kontaktweg__inhalt {
+  min-width: 0;
+}
+
+.kontaktweg__art {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--auf-dunkel-leise);
+}
+
+.kontaktweg__wert {
+  display: block;
+  font-family: var(--headline);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.32rem);
+  font-weight: 700;
+  color: var(--weiss);
+  word-break: break-word;
+}
+
+.kontaktweg--cta {
+  background: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.kontaktweg--cta:hover {
+  background: var(--magenta-dunkel);
+  border-color: var(--magenta-dunkel);
+}
+
+.kontaktweg--cta .kontaktweg__symbol {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--weiss);
+}
+
+.kontaktweg--cta .kontaktweg__art {
+  color: var(--weiss);
+}
+
+/* Auf der Kontaktseite stehen dieselben Elemente auf hellem Grund */
+.kontaktwege--hell .kontaktweg {
+  border-color: var(--linie);
+  color: var(--tinte);
+}
+
+.kontaktwege--hell .kontaktweg:hover {
+  border-color: var(--gruen);
+  background: var(--papier);
+}
+
+.kontaktwege--hell .kontaktweg__symbol {
+  border-color: var(--gruen-sanft);
+  color: var(--gruen-dunkel);
+}
+
+.kontaktwege--hell .kontaktweg__art {
+  color: var(--text-leise);
+}
+
+.kontaktwege--hell .kontaktweg__wert {
+  color: var(--tinte);
+}
+
+.kontaktwege--hell .kontaktweg--cta {
+  background: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.kontaktwege--hell .kontaktweg--cta:hover {
+  background: var(--magenta-dunkel);
+  border-color: var(--magenta-dunkel);
+}
+
+.kontaktwege--hell .kontaktweg--cta .kontaktweg__symbol {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--weiss);
+}
+
+.kontaktwege--hell .kontaktweg--cta .kontaktweg__art,
+.kontaktwege--hell .kontaktweg--cta .kontaktweg__wert {
+  color: var(--weiss);
+}
+
+/* --- Fußbereich --------------------------------------------------------- */
+
+.fuss {
+  background: var(--weiss);
+  border-top: 1px solid var(--linie);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem) 2rem;
+  font-size: 0.97rem;
+}
+
+.fuss__raster {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+
+.fuss__logo img {
+  /* gleiche Breite wie das Logo im Kopf */
+  width: clamp(148px, 17vw, 190px);
+  margin-bottom: 1.15rem;
+}
+
+.fuss__logo p {
+  color: var(--text-leise);
+  max-width: 34ch;
+}
+
+.fuss h2 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gruen-dunkel);
+  margin-bottom: 0.9rem;
+}
+
+.fuss ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fuss li {
+  margin-bottom: 0.5rem;
+}
+
+.fuss a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.fuss a:hover {
+  color: var(--gruen-dunkel);
+  text-decoration: underline;
+}
+
+.fuss__abschluss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--linie);
+  color: var(--text-leise);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* --- Mobile Aktionsleiste ----------------------------------------------- */
+
+.aktionsleiste {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid var(--linie);
+  padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+  gap: 0.6rem;
+}
+
+.aktionsleiste .btn {
+  flex: 1;
+  padding-block: 0.8rem;
+}
+
+/* --- Rechtstexte -------------------------------------------------------- */
+
+.rechtstext h2 {
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.7rem);
+  margin-top: 2.5rem;
+  padding-left: 1rem;
+  border-left: var(--balken) solid var(--magenta);
+}
+
+.rechtstext h2:first-of-type {
+  margin-top: 0;
+}
+
+.rechtstext h3 {
+  font-size: 1.12rem;
+  margin-top: 1.75rem;
+}
+
+.rechtstext ul {
+  padding-left: 1.25rem;
+}
+
+.rechtstext li {
+  margin-bottom: 0.4rem;
+}
+
+.hinweisbox {
+  background: var(--gruen-sanft);
+  border: 1px solid var(--gruen-sanft);
+  border-left: var(--balken) solid var(--gruen);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 2.25rem;
+  font-size: 0.97rem;
+}
+
+.hinweisbox p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Anpassungen für kleinere Bildschirme ------------------------------- */
+
+@media (max-width: 980px) {
+  /* Vier Kennzahlen als 2 × 2: linke Spalte ohne Trennlinie,
+     zweite Zeile mit Linie nach oben */
+  .fakten__liste {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fakten__eintrag:nth-child(odd) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .fakten__eintrag:nth-child(n + 3) {
+    border-top: 1px solid var(--linie);
+  }
+
+  /* Sobald der Text die volle Breite einnimmt, steht er auch rechts auf dem
+     Bild – der Schleier bleibt deshalb gleichmäßig statt nach rechts
+     auszublenden, damit der Absatz nicht auf unruhigem Grund liegt. */
+  .hero {
+    background-image: linear-gradient(
+        rgba(242, 245, 238, 0.95) 0%,
+        rgba(242, 245, 238, 0.92) 60%,
+        rgba(242, 245, 238, 0.88) 100%
+      ),
+      url('../img/akkreditierungsausweise-1200.jpg');
+    background-image: linear-gradient(
+        rgba(242, 245, 238, 0.95) 0%,
+        rgba(242, 245, 238, 0.92) 60%,
+        rgba(242, 245, 238, 0.88) 100%
+      ),
+      image-set(
+        url('../img/akkreditierungsausweise-1200.webp') type('image/webp'),
+        url('../img/akkreditierungsausweise-1200.jpg') type('image/jpeg')
+      );
+  }
+
+  .hero__kopf {
+    width: 100%;
+  }
+
+  .ueber,
+  .kontaktband__innen,
+  .leistung__block {
+    grid-template-columns: 1fr;
+  }
+
+  .ueber__bild {
+    max-width: 420px;
+  }
+
+  .leistungen__raster {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fuss__raster {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fuss__logo {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --kopf-hoehe: 74px;
+  }
+
+  body {
+    font-size: 1.02rem;
+    padding-bottom: 4.5rem; /* Platz für die Aktionsleiste */
+  }
+
+  /* Navigation klappt auf */
+  .nav-schalter {
+    display: inline-flex;
+  }
+
+  /* Das Logo-Schild ragt unten über die Leiste hinaus (siehe .kopf__logo).
+     Ist das Menü offen, wird die Kopfzeile um genau diesen Überstand höher,
+     damit sich Logo und aufgeklapptes Menü nicht überdecken. */
+  .kopf:has(.nav.ist-offen) .kopf__innen {
+    min-height: calc(var(--kopf-hoehe) + 44px);
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--weiss);
+    border-bottom: 1px solid var(--linie);
+    box-shadow: 0 16px 30px -20px rgba(20, 24, 15, 0.45);
+    padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem) 1.25rem;
+  }
+
+  .nav.ist-offen {
+    display: flex;
+  }
+
+  .nav__liste {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--linie);
+    font-size: 1.05rem;
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__link[aria-current='page'] {
+    color: var(--gruen-dunkel);
+  }
+
+  .nav .btn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .aktionsleiste {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .fakten__liste {
+    grid-template-columns: 1fr;
+  }
+
+  .fakten__eintrag {
+    border-left: 0;
+    border-top: 1px solid var(--linie);
+    padding: 1.1rem 0;
+  }
+
+  .fakten__eintrag:first-child {
+    border-top: 0;
+  }
+
+  .karten,
+  .leistungen__raster {
+    grid-template-columns: 1fr;
+  }
+
+  .daten {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .daten dt {
+    padding-bottom: 0;
+    border-top: 1px solid var(--linie);
+  }
+
+  .daten dd {
+    grid-column: 1;
+    padding-top: 0.3rem;
+    border-top: 0;
+  }
+
+  .daten dt:first-of-type {
+    border-top: 0;
+  }
+
+  .fuss__raster {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__aktionen .btn {
+    width: 100%;
+  }
+}
+
+/* Drei Leistungsblöcke nebeneinander: "Umfang" soll in allen Spalten auf
+   derselben Höhe beginnen. Mit subgrid teilen sich die Karten dieselben
+   Zeilenhöhen; ohne subgrid bleibt das bisherige Verhalten bestehen. */
+@supports (grid-template-rows: subgrid) {
+  .leistungen__raster {
+    grid-template-rows: auto auto;
+  }
+
+  .leistungen__raster .leistung {
+    position: relative;
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    padding: 1.75rem 0 0;
+  }
+
+  /* Bei display:contents verschwindet das ::before des Blocks – der
+     Zonenbalken hängt hier deshalb direkt an der Leistung. */
+  .leistungen__raster .leistung::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--balken);
+    border-radius: var(--r-voll);
+    background: var(--gruen);
+  }
+
+  .leistungen__raster .leistung__block {
+    display: contents;
+  }
+
+  .leistungen__raster .leistung__block::before {
+    display: none;
+  }
+}
+
+/* --- Rücksicht auf Systemeinstellungen ---------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .btn:hover,
+  .kontaktweg:hover {
+    transform: none;
+  }
+}
+
+/* --- Druck -------------------------------------------------------------- */
+
+@media print {
+  .kopf,
+  .aktionsleiste,
+  .kontaktband,
+  .sprungnav {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0;
+    font-size: 11pt;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
