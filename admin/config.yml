@@ -4,7 +4,7 @@ backend:
   name: github
   repo: v-martin-web/website
   branch: main
-  base_url: https://sveltia-cms-auth.VERONIKA.workers.dev
+  base_url: https://sveltia-cms-auth.colorcompiler.workers.dev
 
 media_folder: assets/uploads
 public_folder: assets/uploads
