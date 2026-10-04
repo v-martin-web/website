@@ -1,15 +1,15 @@
 {
-  "seo": {
-    "titel": "Kontakt – Veronika Martin Sport Event Management",
-    "beschreibung": "Kontakt zu Veronika Martin, Sport Event Management: per E-Mail an events@veronika-martin.de oder telefonisch unter +49 (0) 177 144 46 28."
-  },
   "kopf": {
     "label": "Kontakt",
     "ueberschrift": "Ich freue mich auf Ihre Nachricht",
-    "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen zurück."
+    "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen."
   },
   "leistungen": {
     "label": "Leistungen",
     "ueberschrift": "Wobei ich Sie unterstützen kann"
+  },
+  "seo": {
+    "titel": "Kontakt – Veronika Martin Sport Event Management",
+    "beschreibung": "Kontakt zu Veronika Martin, Sport Event Management: per E-Mail an events@veronika-martin.de oder telefonisch unter +49 (0) 177 144 46 28."
   }
 }
