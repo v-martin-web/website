@@ -518,6 +518,7 @@ strong {
   width: 18px;
   height: 2px;
   background: var(--tinte);
+  transition: background-color 0.2s ease;
 }
 
 .nav-schalter__balken::before,
@@ -528,6 +529,7 @@ strong {
   width: 18px;
   height: 2px;
   background: var(--tinte);
+  transition: transform 0.25s ease;
 }
 
 .nav-schalter__balken::before {
@@ -536,6 +538,19 @@ strong {
 
 .nav-schalter__balken::after {
   top: 6px;
+}
+
+/* Menü offen: die äußeren Balken kreuzen sich, der mittlere blendet aus */
+.nav-schalter[aria-expanded='true'] .nav-schalter__balken {
+  background: transparent;
+}
+
+.nav-schalter[aria-expanded='true'] .nav-schalter__balken::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-schalter[aria-expanded='true'] .nav-schalter__balken::after {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* --- Hero --------------------------------------------------------------- */
@@ -1385,12 +1400,9 @@ strong {
   }
 
   /* Das Logo-Schild ragt unten über die Leiste hinaus (siehe .kopf__logo).
-     Ist das Menü offen, wird die Kopfzeile um genau diesen Überstand höher,
-     damit sich Logo und aufgeklapptes Menü nicht überdecken. */
-  .kopf:has(.nav.ist-offen) .kopf__innen {
-    min-height: calc(var(--kopf-hoehe) + 44px);
-  }
-
+     Das aufgeklappte Menü beginnt deshalb mit genau diesem Überstand als
+     Innenabstand – so bleibt die Kopfzeile gleich hoch und weder der
+     Menü-Button noch der Seiteninhalt springen beim Öffnen. */
   .nav {
     position: absolute;
     top: 100%;
@@ -1404,7 +1416,7 @@ strong {
     background: var(--weiss);
     border-bottom: 1px solid var(--linie);
     box-shadow: 0 16px 30px -20px rgba(20, 24, 15, 0.45);
-    padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem) 1.25rem;
+    padding: calc(44px + 0.5rem) clamp(1.25rem, 4vw, 2.5rem) 1.25rem;
   }
 
   .nav.ist-offen {
