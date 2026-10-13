@@ -1,21 +1,29 @@
 {
-  "seo": {
-    "titel": "Sport Event Management & Akkreditierung | Veronika Martin",
-    "beschreibung": "Akkreditierung, Hotels, Ticketing und Event Service für Sportveranstaltungen – seit über 25 Jahren, von der Dorfmeisterschaft bis zur Weltmeisterschaft."
-  },
   "hero": {
     "label": "Sport Event Management",
-    "motto": "Mittendrin statt nur dabei",
+    "motto": "Mittendrin statt nur dabeibei",
     "unterzeile": "Das ist mein Motto, unter dem ich mich gerne im Sport engagiere!",
     "text": "Sie organisieren eine Veranstaltung – egal ob Dorfmeisterschaften, nationale oder internationale Profimeisterschaften – und benötigen noch Unterstützung bei der Vorbereitung und Durchführung? Oder Ihre Profimannschaft benötigt organisatorische Hilfe? Gerne unterstütze ich Sie in einzelnen Bereichen, übernehme auch die Projektleitung oder berate Sie in der Umsetzung Ihrer Projekte.",
     "buttonKontakt": "Kontakt aufnehmen",
     "buttonLeistungen": "Leistungen ansehen"
   },
   "kennzahlen": [
-    { "zahl": "25+", "text": "Jahre Organisation von Sportveranstaltungen" },
-    { "zahl": "55", "text": "internationale Veranstaltungen" },
-    { "zahl": "173", "text": "Nationen akkreditiert bei der Tischtennis-WM 2017" },
-    { "zahl": "11.370", "text": "Hotelübernachtungen verwaltet bei einer einzigen Weltmeisterschaft" }
+    {
+      "zahl": "25+",
+      "text": "Jahre Organisation von Sportveranstaltungen"
+    },
+    {
+      "zahl": "55",
+      "text": "internationale Veranstaltungen"
+    },
+    {
+      "zahl": "173",
+      "text": "Nationen akkreditiert bei der Tischtennis-WM 2017"
+    },
+    {
+      "zahl": "11.370",
+      "text": "Hotelübernachtungen verwaltet bei einer einzigen Weltmeisterschaft"
+    }
   ],
   "leistungen": {
     "label": "Leistungen",
@@ -37,5 +45,9 @@
     "label": "Kontakt",
     "ueberschrift": "Sie planen eine Veranstaltung?",
     "text": "Schreiben Sie mir oder rufen Sie einfach an – ich melde mich zeitnah bei Ihnen zurück."
+  },
+  "seo": {
+    "titel": "Sport Event Management & Akkreditierung | Veronika Martin",
+    "beschreibung": "Akkreditierung, Hotels, Ticketing und Event Service für Sportveranstaltungen – seit über 25 Jahren, von der Dorfmeisterschaft bis zur Weltmeisterschaft."
   }
 }
