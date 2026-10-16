@@ -379,6 +379,8 @@ strong {
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+  /* Leerzeichen der Mono-Schrift sind volle Zeichenbreite – auf normal ziehen */
+  word-spacing: -0.35em;
   text-transform: uppercase;
   color: var(--gruen-dunkel);
   text-decoration: none;
@@ -754,9 +756,13 @@ strong {
   align-self: flex-start;
 }
 
-.karte--hervor::before {
-  background: var(--magenta);
-  height: 5px;
+/* Dicker Magenta-Balken nur, wenn die Karten untereinander stehen –
+   nebeneinander bekommt das Spezialgebiet denselben Balken wie die anderen. */
+@media (max-width: 760px) {
+  .karte--hervor::before {
+    background: var(--magenta);
+    height: 5px;
+  }
 }
 
 .abzeichen {
