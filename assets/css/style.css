@@ -1459,8 +1459,31 @@ strong {
     display: flex;
   }
 
+  /* Auf dem Handy läge der Schleier über dem ganzen Bild – stattdessen steht
+     die Ausweissammlung als eigener, klarer Streifen über dem Text. */
   .hero {
+    flex-direction: column;
+    align-items: stretch;
     min-height: 0;
+    padding-top: 0;
+    background: var(--papier);
+  }
+
+  .hero::before {
+    content: '';
+    display: block;
+    height: clamp(190px, 56vw, 300px);
+    margin-bottom: 2rem;
+    border-bottom: var(--balken) solid var(--magenta);
+    background-color: #fff;
+    background-position: 45% 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/akkreditierungsausweise-1200.jpg');
+    background-image: image-set(
+      url('../img/akkreditierungsausweise-1200.webp') type('image/webp'),
+      url('../img/akkreditierungsausweise-1200.jpg') type('image/jpeg')
+    );
   }
 
   .fakten__liste {
