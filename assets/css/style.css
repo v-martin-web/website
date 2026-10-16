@@ -598,6 +598,11 @@ strong {
   width: 100%;
 }
 
+/* Großes Logo unter dem Foto – nur auf dem Handy (siehe max-width: 760px) */
+.hero__logo {
+  display: none;
+}
+
 .hero__kopf {
   display: flex;
   flex-direction: column;
@@ -1473,9 +1478,7 @@ strong {
     content: '';
     display: block;
     height: clamp(190px, 56vw, 300px);
-    margin-bottom: 2rem;
-    border-bottom: var(--balken) solid var(--magenta);
-    background-color: #fff;
+    background-color: var(--weiss);
     background-position: 45% 60%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1484,6 +1487,76 @@ strong {
       url('../img/akkreditierungsausweise-1200.webp') type('image/webp'),
       url('../img/akkreditierungsausweise-1200.jpg') type('image/jpeg')
     );
+  }
+
+  /* Startseite ganz oben: Das Foto reicht bis an den oberen Rand, die Leiste
+     ist durchsichtig und zeigt nur den Menü-Button, das Logo steht groß unter
+     dem Foto. Sobald gescrollt oder das Menü geöffnet wird, ist die Leiste
+     wieder weiß mit Schild und das große Logo klappt weg. */
+  .kopf--ueber-bild {
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .kopf--ueber-bild:not(.ist-gescrollt, :has(.nav.ist-offen)) {
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+  }
+
+  .kopf--ueber-bild .kopf__logo {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .kopf--ueber-bild:not(.ist-gescrollt, :has(.nav.ist-offen)) .kopf__logo {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Rahmen wie in der weißen Leiste, nur mit weißer Fläche fürs Foto –
+     so ändert sich der Button beim Scrollen nicht. */
+  .kopf--ueber-bild .nav-schalter {
+    background: var(--weiss);
+  }
+
+  .kopf--ueber-bild ~ main .hero {
+    margin-top: calc(-1 * var(--kopf-hoehe));
+  }
+
+  /* Ohne Scroll-Verankerung würde der Browser das Zusammenklappen des Logos
+     mit der Scrollposition ausgleichen – die Seite spränge zurück nach oben
+     und das Logo klappte wieder auf. So gleitet der Inhalt einfach hoch. */
+  html:has(.kopf--ueber-bild) {
+    overflow-anchor: none;
+  }
+
+  .hero__logo {
+    display: flex;
+    justify-content: center;
+    /* Logo hängt an der Unterkante: Beim Zusammenklappen schiebt es sich
+       nach oben unter das Foto, der Text gleitet mit. */
+    align-items: flex-end;
+    overflow: hidden;
+    max-height: 10rem;
+    padding: 0.75rem var(--rand) 1.1rem;
+    margin-bottom: 2rem;
+    background: var(--weiss);
+    border-bottom: var(--balken) solid var(--magenta);
+    transition: max-height 0.45s ease, padding 0.45s ease;
+  }
+
+  .hero__logo img {
+    flex-shrink: 0;
+    width: 190px;
+    transition: opacity 0.4s ease;
+  }
+
+  .kopf--ueber-bild:is(.ist-gescrollt, :has(.nav.ist-offen)) ~ main .hero__logo {
+    max-height: 0;
+    padding-block: 0;
+  }
+
+  .kopf--ueber-bild:is(.ist-gescrollt, :has(.nav.ist-offen)) ~ main .hero__logo img {
+    opacity: 0;
   }
 
   .fakten__liste {
